@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Button } from 'antd'
 import './index.scss';
 
 class Index extends Component {
@@ -51,6 +52,7 @@ class Index extends Component {
           <label>名字:<input type="text" value={this.state.value} onChange={this.handleChange}/></label>
           <input type="submit" value="提交" />
         </form>
+        <Button type="primary">Primary</Button>
       </div>
     );
   }
