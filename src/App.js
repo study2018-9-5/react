@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 // import { Row, Col, Input, Button } from 'antd';
 import './App.css';
 import Index from './components/index.js';
-import SearchTable from './components/searchTable.js';
+// import SearchTable from './components/searchTable.js';
+import SearchTable from './components/searchTableUpdata.js';
 // function App() {
 //   return (
 //     <div className="App">

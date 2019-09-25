@@ -27,15 +27,14 @@ class SearchTable extends Component{
     event.preventDefault();
   }
   // 输入值变化触发绑定
-  handleChange(event){
-    // console.log(this.state.formData)
-    // let packageName = this.state.formData.packageName;
-    this.setState({formData:{packageName:event.target.value}})
+  handleChange(event,param){
+    console.log(event,param);
+    this.setState({formData:{packageName:event.target.value}});
   }
   // 函数操作
 
   render(){
-    //from表单样式  默认的比例 label8 输入框占16
+    //from表单样式  默认的比例 label占8 输入框占16
     const  formItemLayout = {
       labelCol: {
           span: 8
@@ -47,11 +46,14 @@ class SearchTable extends Component{
 
     return(
       <div className="searchTable">
+        {/* <Form layout="inline" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}> */}
         <Form layout="inline" onSubmit={this.handleSubmit} {...formItemLayout}>
           <Row gutter={24}>
             <Col span={6}>
               <Form.Item label="套包名称：">
-                <Input value={this.state.formData.packageName} onChange={this.handleChange} placeholder="请输入套包名称"/>
+                {/* <Input value={this.state.formData.packageName} onChange={this.handleChange} placeholder="请输入套包名称"/> */}
+                {/* onChange 事件中传参的方法 */}
+                <Input value={this.state.formData.packageName} onChange={(value) => {this.handleChange(value,'packageName')}} placeholder="请输入套包名称"/>
               </Form.Item>
             </Col>
             <Col span={6}>
